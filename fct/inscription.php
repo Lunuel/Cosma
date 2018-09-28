@@ -87,22 +87,35 @@ if(isset($_POST['valider_inscription'])){
 
 				// Préparation du mail contenant le lien d'activation
 				$destinataire = $email;
-				$sujet = "Cosma: Activation de votre compte" ;
-				//$entete = "From: inscription@votresite.com" ;
-				$entete = "From: kuster.lunuel@yahoo.com" ;
-				// Le lien d'activation est composé du login(log) et de la clé(cle)
-				$message = '<div style="width:100%;">
-				<img src="" style="width:100%;height:auto">
-				<div style="width:100%;">
-				<p style="text-align:center,colorwhite;">Ceci est un mail automatique, Merci de ne pas y répondre.</p>
-				<p style="text-align:center;color:white;">---------------</p>
-				<p style="text-align:center;color:white;">Bienvenue sur notre site <br>
-				Pour activer votre compte, veuillez cliquer sur le lien ci dessous</p>
-				<a href="https://cosma-running.000webhostapp.com/php/ConfirmationAccount?key='.$key.'&&idAdherent='.$code.'">Cliquez-ici</a>
-				</div>
-				</div>';
 
-				//mail($destinataire,$sujet,$message,$entete);
+				//=====Déclaration des messages au format texte et au format HTML. 
+				$message_txt = "Salut à tous, voici un e-mail envoyé par un script PHP.";
+
+				$message = '<html><head></head><body><div>
+				<img src="" style="width:100%;height:auto">
+				<div>
+				<p style="text-align:center">Ceci est un mail automatique, Merci de ne pas y repondre.</p>
+				<p style="text-align:center;">---------------</p>
+				<p style="text-align:center;">Bienvenue sur notre site <br>
+				Pour activer votre compte, veuillez cliquer sur le lien ci dessous</p><p style="text-align:center;" ><a style="color:#485d96;text-decoration:none;"  
+				href="http://www.cosmarunning.fr/php/ConfirmationAccount?key='.$key.'&&idAdherent='.$code.'">Cliquez-ici</a></p>
+				</div>
+				<p style="text-align:center;" >
+				ou copier ce lien <br>http://www.cosmarunning.fr/php/ConfirmationAccount?key='.$key.'&&idAdherent='.$code.'</p>
+				</div>
+				</div></body></html>';
+				//==========
+
+				//=====Définition du sujet.
+				$sujet = "Cosma: Activation de votre compte" ;
+				//=========
+				 
+				//=====Création du header de l'e-mail.
+				$header = "From: <secretariat@cosma-marathon.fr>\n";
+				$header.= "MIME-Version: 1.`\n";
+				$header.= "Content-type: text/html; charset= iso-8859-1\n";
+
+				mail($destinataire,$sujet, $message, $header);
 				
 				$_SESSION['InscriptionReussie'] = "Vous êtes désormais adhérent(e) <br> Un email de confirmation a été envoyé. 
 				";
