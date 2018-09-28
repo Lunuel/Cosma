@@ -10,6 +10,16 @@ Il suffit de changer les valeurs pour celle de la BDD de l'hébergeur
 
 *Changement de la BDD avec la suppression de 3 colonnes, CertificatMedical,Licence,RIB
 //Explication
-	-La gestion de ces objets sont bien trop long, 
+	-La gestion de ces objets est bien trop longue, 
 	-Les fonctions ne sont pas optimales pour gérer ce genre
          de fichier,
+	-Question d'interet, il vaudrait mieux créer cette possiblité 
+         au niveau de l'administration
+
+* Dans le profil, on on ne peut plus ajouter  CertificatMedical,Licence,RIB
+	-On ne plus les voir
+
+*Manque les plans d'entrainements (page= PlansEntrainements.php)
+	-Redirection des liens vers page en construction
+
+	
