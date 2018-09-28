@@ -1,0 +1,307 @@
+html,body {
+	margin: 0px;  outline: none;
+	font-family: 'Roboto Condensed', sans-serif;
+background: white;
+    min-width: 0;
+	font-size: 20px;
+}
+
+h1 {
+	font-size: 19px;
+	margin: 5px 0px;
+}
+
+p {cursor: default; margin: 0px;}
+
+button {outline: none;border:none;cursor: pointer;}
+
+* {box-sizing: border-box;}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+ul {
+	list-style-type: none;
+    margin: auto;
+    padding: 0;
+       overflow: auto;
+}
+li {
+	text-align: left;
+	display: inline-flex;
+	text-align: center;
+	padding: 5px 10px;
+	font-size: 23px;
+	width:100%;
+}
+input {
+	max-width: 200px;
+	width: 100%;
+	font-size: 15px;
+	padding: 3px 5px;
+	transition: 0.7s;
+	border:none;
+	margin: 3px 0px;
+	border-bottom: 2px solid #c5d2f7;
+	outline: none;
+	margin-bottom: 10px;
+
+}
+select {
+	color: white;
+	background-color: #485d96e3;
+	outline: none;
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+		border:none;
+}
+option {
+	color: white;
+	background-color: #485d96e3;
+}
+input[type=text]:focus{
+    border-bottom: 2px solid #485d96e3;
+}
+input[type=password]:focus {
+	 border-bottom: 2px solid #485d96e3;
+}
+
+
+label {
+	outline: none;
+	font-size: 20px;
+	text-align: left;
+	margin-right: 6px;
+	
+}
+table {
+	width: 100%;
+	border-collapse: collapse;
+	max-width: 900px;
+}
+td {font-weight: 500;text-align: left;padding: 8px;}
+th{font-weight: bold;font-size: 18px;padding: 8px;}
+
+form {
+	font-size: 23px;
+	margin: 5px 0px;
+
+}
+
+
+/* Couleurs */
+.white {color: white;}
+.vert {}
+.gris {color:#595958}
+.jaune {color:#ead224;}
+.bleu {color:#485d96e3}
+
+/*Polices*/
+.Yanone {font-family: 'Yanone Kaffeesatz', sans-serif;font-size: 24px;}
+
+/* Border sizepx_solid_color */
+.border {}
+
+
+.margTB5 {
+	margin: 5px 0px;
+}
+/*Margin Top*/
+.marg5 {
+	margin-top: 5px;
+}
+.marg10 {
+	margin-top: 10px;
+}
+.marg15 {
+	margin-top: 15px;
+}
+
+/*Alignement au centre*/
+.t-center {text-align: center;}
+.t-justify {text-align: justify;}
+
+/*Image en background propriétés*/
+.bg-image {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+
+/*Pour qu'une section prenne toute la hauteur: height:100vh + position: fixed*/
+.wrapper {
+	display: grid;
+	grid-template-columns:200px 1fr;
+	width: 100%;
+	grid-template-rows:auto 1fr;
+	min-height: 100vh;
+}
+
+.wrapper-login-admin{
+	display: grid;
+	grid-template-columns:1fr;
+	width: 100%;
+	grid-template-rows:auto 1fr;
+	padding-bottom: 50px;
+	min-height: 100vh;
+}
+
+.C1-C3 div{
+	padding: 5px 10px;
+	border-bottom:3px solid #485d96e3;
+}
+
+.main-content{
+	padding: 15px;
+}
+
+.C2-C3 {	padding-bottom: 150px;}
+
+.C1{background-color: #485d96e3;}
+
+.C1 div ul a {
+		text-align: left;
+	display: inline-flex;
+	text-align: center;
+	padding: 5px 10px;
+	font-size: 23px;
+	width:100%;
+}
+.table-admin {margin: 0px;}
+
+.table-admin tr td{
+	border-bottom: 2px solid #485d966b;
+}
+
+.table-admin tr th{
+	border-bottom: 2px solid #485d96e3;
+	text-align: left;
+}
+
+/* Connexion */
+.WC-admin {
+	font-size: 36px;
+	border-bottom : 2px solid white;
+	color: white;
+}
+.table-admin-connexion label{
+	color: white;
+}
+
+/* Rédaction article*/
+.C-Connexion-admin {background-color: #485d96e3;
+	padding: 15px 20px;}
+.input-title {	max-width:300px;}
+.submit {max-width: 200px;}
+
+/* NavBar */
+.active {background-color:#304273e3;}
+
+
+/* Home*/
+
+.t-admin-home {
+	font-size: 28px;
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+
+}
+
+.C-admin-home {
+	background-color: #485d96e3;
+	padding:15px; 
+	width: 100%;
+	max-width: 450px;
+	border-top-right-radius:3px; 
+}
+.C-admin-home p{
+	color:white;
+}
+/* Course */
+
+.C-input-file{
+	position: relative;
+	z-index: 0;
+}
+.browse-input {
+    max-width: 300px;
+    position: absolute;
+    z-index: -1;
+    top: 0px;
+    width: 100%;
+    font-size: 15px;
+    padding: 4px 5px;
+    transition: 0.7s;
+    border: none;
+    margin: 3px 0px;
+    outline: none;
+    margin-bottom: 10px;
+    display: block;	
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+.butt-browse{
+	font-size: 15px;
+    color: white;
+    background-color: #485d96;
+    padding: 5px 8px;
+    max-width: 133px;
+    width:100%;
+}
+
+.butt-close {
+	background-color: transparent;
+	transition: 0.7s;
+	width: 26px;
+	height: 26px;
+}
+
+.butt-close:hover{
+	background-color: #485d96e3;
+}
+.butt-close:hover i{
+	color: white;
+}
+.p-statut > e{}
+
+/* Liste des adhérents */
+#button_loupe {
+	width: 30px;
+	height:26px;
+	margin:auto -5px;
+	display: flex; 
+	background-color:  #485d96e3;
+}
+
+/*  Commandes */
+.classemment{
+	font-size: 16px;
+	padding: 2px 5px 0px 5px;
+	height: 25px;
+	margin: auto;
+}
+#button_classer {
+	width: 30px;
+	height:25px;
+	margin:auto;
+	display: flex; 
+	background-color:  #485d96e3;
+	border:none;
+	margin-left: 0px;
+	border-left:2px solid white;
+}
+
+.C-indisponible {display: flex;width: 100%;
+height: 100%;}
+
+@media (max-width: 1000px) {
+.C2-C3 {grid-column: 1/3}
+.C1 {grid-column: 1/3}
+.wrapper {grid-template-rows: auto auto 1fr;}
+}	
+@media (max-width: 900px) {
+
+	.table-admin tr th,.table-admin tr td{
+		font-size: 16px;
+	}
+}	

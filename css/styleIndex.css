@@ -1,0 +1,968 @@
+html,body {
+	margin: 0px;  outline: none;
+	font-family: 'Roboto Condensed', sans-serif;
+	color: #595958;
+	font-size: 20px;
+}
+
+h1 {
+	font-size: 23px;
+	margin: 5px 0px;
+}
+
+p {cursor: default; margin: 0px;}
+
+button {outline: none;border:none;cursor: pointer;}
+
+* {box-sizing: border-box;}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+ul {
+	list-style-type: none;
+    margin: auto;
+    padding: 0;
+}
+li {
+	text-align: left;
+	display: inline-flex;
+	text-align: center;
+}
+input {
+	width: 100%;
+	font-size: 14px;
+	padding: 3px 5px;
+	transition: 0.7s;
+	border:none;
+	margin: 3px 0px;
+	border-bottom: 2px solid #c5d2f7;
+	outline: none;
+
+}
+select {
+		color: white;
+	background-color: #485d96e3;
+	font-size: 18px;
+	padding: 3px 7px;
+	outline: none;
+}
+option {
+	color: white;
+	background-color: #485d96e3;
+}
+input[type=text]:focus{
+    border-bottom: 2px solid #485d96e3;
+}
+input[type=password]:focus {
+	 border-bottom: 2px solid #485d96e3;
+}
+
+
+
+label {
+	color: #595958;
+	outline: none;
+	font-size: 16px;
+	
+}
+table {
+	width: 100%;
+	border-collapse: collapse;
+	max-width: 900px;
+	margin: auto;
+}
+td {font-weight: 500;font-size: 16px;text-align: left;padding: 8px;}
+th{font-weight: bold;font-size: 18px;padding: 8px;}
+
+
+form {
+	font-size: 18px;
+	margin: 5px 0px;
+
+}
+.table-admin {margin: 0px;}
+
+.table-admin tr td{
+	border-bottom: 2px solid #485d966b;
+}
+
+.table-admin tr th{
+	border-bottom: 2px solid #485d96e3;
+	text-align: left;
+}
+
+
+.C-confirmation {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    left: -60px;
+    padding:5px 10px;
+}
+
+.C-confirmation button{
+	margin: 3px auto 0px auto;
+}
+
+.t-confirm {font-family: 'Yanone Kaffeesatz', sans-serif;
+font-size: 13px;}
+
+.showConfirm {display: block;}
+/* Couleurs */
+.white {color: white;}
+.vert {}
+.gris {color:#595958;}
+.jaune {color:#ead224;}
+.bleu {color:#485d96e3}
+
+/*Polices*/
+.Yanone {font-family: 'Yanone Kaffeesatz', sans-serif;}
+
+/* Border sizepx_solid_color */
+.border {}
+
+
+.margTB5 {
+	margin: 5px 0px;
+}
+/*Margin Top*/
+.marg5 {
+	margin-top: 5px;
+}
+.marg10 {
+	margin-top: 10px;
+}
+.marg15 {
+	margin-top: 15px;
+}
+
+/*Alignement au centre*/
+.t-center {text-align: center;}
+.t-justify {text-align: justify;}
+
+/*Image en background propriétés*/
+.bg-image {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+
+/*Pour qu'une section prenne toute la hauteur: height:100vh + position: fixed */
+
+/* Grid 3/2 */
+.wrapper {
+	display: grid;
+	grid-template-columns:300px 1fr;
+	width: 100%;
+	grid-template-rows:auto 1fr auto auto;
+	min-height: 100vh;
+}
+
+.wrapper-login-admin{
+	display: flex;
+	min-height: 100vh;
+
+}
+
+.C1-C3 {
+	grid-column: 1/3;
+  	flex-wrap: wrap;
+
+}
+.Wrapper-Navbar {
+	grid-row: 1;
+	background-color: #0b0b3bdb;
+	height: auto;
+}
+
+.Wrapper-Content {
+	grid-row: 2;
+	padding: 24px;
+}
+.Wrapper-Connexion {
+	grid-row: 2;
+	padding: 10px 15px;
+}
+
+.Wrapper-Footer {
+	grid-row:3;
+	background-color:#0b0b3bdb;
+	color: white;
+	padding: 15px;
+}
+
+.C1 {
+	grid-column: 1;
+}
+
+.C2-C3 {
+	grid-column: 2/3;
+
+  	flex-wrap: wrap;
+
+}
+
+/* NAVBAR */
+.Wrapper-Navbar div{
+	display: flex;
+}
+
+.Wrapper-Navbar ul li a:hover {
+	color: #ffff00;
+}
+
+.horizontal-menu ul{
+	list-style-type: none;
+		background:#2d2d57;
+	height:46px;
+	overflow:hidden;
+}
+
+.horizontal-menu li{
+	padding: 5px 10px;
+	font-size: 23px;
+
+
+}
+
+.horizontal-menu li a{
+	color:white;
+
+}
+li a:hover{
+	color:#fef401;
+}
+
+.horizontal-menu i{
+	align-content: right;
+	color:white;
+}
+
+.horizontal-menu button{
+	float:right;
+	height:46px;
+	width:46px;
+	background:none;
+	border:none;
+	display:none;
+	outline:none;
+	cursor:pointer;
+}
+
+
+#vertical-menu {
+	background:#2d2d57;
+	max-width:150px;
+	width:100%;
+	display:none;
+	opacity:0;
+	position:absolute;
+	right: 0px;
+	padding: 5px;
+	height: auto;
+}
+
+#vertical-menu ul{
+	list-style-type: none;
+
+}
+
+#vertical-menu li {
+	padding:5px 0pX;
+	text-align: center;
+	margin: auto;
+	width: 100%;
+}
+
+#vertical-menu li a{
+	color:white;
+	width: 100%;
+}
+
+
+ #vertical-menu li a:link{
+	color:white;
+	text-decoration: none;
+}
+#vertical-menu li a:hover{
+	color:#fef401;
+}
+
+@media screen and (max-width: 800px) {
+  .horizontal-menu button {
+    float: right;
+    display: block;
+  }  
+
+  .horizontal-menu button {
+    position: absolute;
+    right: 0px;
+  }
+  .horizontal-menu li {
+  	font-size: 15px;
+    display: none;
+    float:none;
+  }
+    .vertical-menu li a{
+  	font-size: 15px;
+  }
+
+}
+
+/*Connexion*/
+
+.table-connexion {
+	width: 80%;
+}
+
+.C-Connexion {
+	width: 100%;
+	height: auto;
+	background-color: white;
+	margin: auto;
+	border:2px solid #485d96e3;
+	max-width: 400px;
+}
+.C-Inscription {
+	margin: 30px auto;
+	width: 90%;
+	height: auto;
+	background-color: white;
+	border:2px solid #485d96e3;
+	max-width: 400px;
+}
+#formIns {padding: 10px 15px;}
+
+.WC-id {
+	text-align: center;
+	color: white;
+	background-color: #485d96e3;
+}
+#table-Ins {
+width: 80%;
+}
+
+.input-dateNaissance {
+	display: inline-block;border:none;
+	width: auto;
+	margin: auto;
+	background-color: #485d96e3;
+	color: white;
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 14px;
+}
+.label-DateNaissance {
+	display: inline-block;
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	margin: auto 0px;
+	font-size: 17px;
+}
+.label-sexe {
+	display: inline-block;
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	margin: auto;
+	font-size: 17px;
+	 cursor: pointer;
+  position: relative;
+  margin-left: 26px;
+  margin-right: 15px;
+}
+
+.input-radio {
+	display: none;
+}
+
+.t-cat {
+	margin: 10px 0px 5px 0px;
+	font-size: 20px;
+}
+
+
+.label-sexe:before {
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-right: 10px;
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid #485d96e3;
+  left: -22px;
+  bottom: 2px;
+  background-color: transparent;
+  box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px rgba(255, 255, 255, .8);
+}
+
+input[type=radio]:checked + label:before {
+    background-color: #485d96e3;
+}
+input[type=radio]:hover label:before {
+    border-color: #485d96e3;
+    box-shadow: none;
+}
+label:hover {
+     color: #485d96e3;
+}
+
+.label-file {
+	display: inline-block;
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	margin: 4px auto 5px auto;
+	font-size: 18px;
+}
+
+.browse-input {
+    max-width: 250px;
+    position: absolute;
+    z-index: -1;
+    bottom: 0px;
+    width: 100%;
+    font-size: 15px;
+    transition: 0.7s;
+    border: none;
+    outline: none;
+    color: #595958;
+    display: block;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+
+.C-input-file {
+	display: block;
+	position: relative;
+}
+.submit {
+	background-color: #485d96e3;
+	color: white;
+	font-family: 'Roboto Condensed', sans-serif;
+	border:none;
+	padding: 5px ;
+	margin-top: 10px;
+	cursor: pointer;
+
+}
+
+.sub_qst{
+	max-width: 200px;
+}
+
+.t-Acceder,  .t-Acceder a{
+	margin: 7px 0px;
+	color: #485d96e3;
+	font-size: 16px;
+}
+
+
+.deco_button {
+    color: #485d96e3;
+    text-align: center;
+    position: relative;
+    font-size: 20px;
+    padding: 2px 15px;
+    text-decoration: none;
+    background: transparent;
+    border: 2px solid #485d96e3;
+    	font-family: 'Yanone Kaffeesatz', sans-serif;
+    	margin: 5px 0px;
+
+    cursor: pointer;}
+
+.p-entrainements {
+	font-size: 15px;
+	font-weight: 600;
+	margin-top: 10px;
+}
+
+.C-Horaires {
+
+	    max-width: 400px;
+	    margin: 25px auto;
+
+}
+.C-Horaires div ul li {
+	font-size: 15px;
+	padding-left: 10px;
+}
+
+/* Content */
+.Wrapper-Content {
+	text-align: justify;
+}
+.h2 {
+	color: #485d96e3;
+	text-align: center;
+	font-size: 35px;
+	margin: 15px 0px 6px 0px; 	
+	border-bottom: 2px solid #485d96e3;
+
+}
+.h1 {
+	color: #485d96e3;
+	font-size: 27px;
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	margin: 15px 0px 6px 0px; 
+
+
+}
+
+.content-li-accueil{
+	text-align: left;
+	padding: 2px ;
+	font-size:  18px;
+}
+.img-slide-Accueil {
+	border: 2px solid #485d96e3;
+	margin: 25px auto;
+	height: auto;
+	width: 70%;
+	display: block;
+}
+
+.butt-article {
+	background-color: #304273e3;
+	color: white;
+	font-size: 21px;
+	padding: 8px 15px;
+	cursor: pointer;
+}
+
+.active-butt-article {
+	background-color: #485d96e3;
+}
+
+
+.Date-article {
+	font-size: 12px;
+}
+
+.Title-article{padding: 10px 7px;
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	font-size: 25px;}
+
+.C-article{
+	background-color: #485d96e3;
+	width: 100%;
+	color: white;
+	padding: 15px;
+	max-width: 850px;
+	display: none;
+	min-height: 300px;
+}
+.active-article {
+	display: block;
+}
+.Date-article {
+
+}
+.Title-article {
+
+}
+.Text-article {
+	font-size: 12px;
+	margin: 5px 0px;
+}
+.Suite-article {float: right;font-size: 15px;transition: 0.3s;}
+.Suite-article:hover {margin-right: 5px;}
+
+.C-Contenu p{font-size: 14px;}
+
+#table-liste-articles tr th{
+	font-size: 18px;
+	padding-bottom: 7px;
+}
+
+#table-liste-articles{
+	width: 100%;
+	border-bottom:2px solid white;
+}
+#table-liste-articles tr{
+	border-bottom:2px solid white;
+}
+#table-liste-articles tr th {
+	padding: 5px;
+}
+
+
+/*Footer*/
+
+
+.title-footer-Accueil {
+	font-size: 24px;
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+.Wrapper-Footer{
+	margin: auto;
+	text-align: center;
+	font-size: 17px;
+	width: 100%;
+}
+
+/* Separateur hr*/
+hr.sep1 {
+	overflow: visible; /* For IE */
+    padding: 0;
+    border: none;
+    border-top:2px solid  white;
+    text-align: left;
+    size: 15px;
+    width: 20%;
+}
+hr.sep2 {
+	overflow: visible; /* For IE */
+    padding: 0;
+    border: none;
+    border-top:2px solid  #485d96e3;
+    text-align: left;
+    size: 15px;
+    width: 20%;
+    margin: 8px 0px;
+    width: 100%;
+
+}
+/*Page Profil*/
+.upload .browse input[type=file]{
+    position: absolute;
+    margin-top: 3px;
+    margin-left: 3px;
+    height: 1px;
+    width: 1px;
+    z-index: -5;
+}
+
+.radio label{
+margin-bottom: 15px;
+min-height: 0px;
+}
+.label_radio {
+	display: inline-block;
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	margin: auto;
+	font-size: 17px;
+	 cursor: pointer;
+  position: relative;
+  margin-left: 26px;
+  margin-right: 15px;
+
+}
+
+.label_radio:before {
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-right: 10px;
+  position: absolute;
+  border-radius: 50%;
+  border: 2.5px solid white;
+  left: -26px;
+  background-color: transparent;
+  box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px rgba(255, 255, 255, .8);
+}
+
+.radio label:before {
+  border-radius: 8px;
+}
+
+
+
+/*Page A propos*/
+#map {
+  height: 400px;
+  width: 80%;
+  margin: 20px auto; 
+}
+
+.bureau-span {
+	font-weight: 100;
+}
+/*Page Performances*/
+
+
+.C-Minimas {
+	width: auto;
+	margin-top: 15px;
+}
+
+.C-Minimas-tableaux {
+	width: 100%;
+	display: flex;
+}
+
+.C-Performance table th {
+	border: 2px solid #5c6fa2;
+	padding: 7px 10px;
+	width: 30%;font-weight: normal;
+	
+	
+}
+.C-Performance table td {
+	padding: 9px 0px 2px 0px;
+	font-weight: bold;	
+}
+
+.C-Performance table  {
+	margin-top: 10px;
+	
+}
+.butt-Performances{
+	color: #5c6fa2;
+	font-size: 19px;
+	padding: 5px 8px;
+	background-color: white;
+
+}
+.active {
+	background-color: #5c6fa2;
+	color: white;
+}
+
+.table-minimas tbody {
+	width: 100%;
+}
+
+.table-minimas {
+	display: none;
+	width: 100%;
+	margin: 0px;
+
+}
+.active-table {
+	display: block;
+}
+
+.ages {font-size: 15px;}
+
+/*Profil*/
+.table-admin {margin: 0px;}
+
+.table-admin tr td{
+	border-bottom: 2px solid #485d966b;
+}
+
+.table-admin tr th{
+	border-bottom: 2px solid #485d96e3;
+	text-align: left;
+}
+
+.butt-browse {
+    font-size: 15px;
+    color: white;
+    background-color: #485d96;
+    padding: 5px 8px;
+    max-width: 133px;
+    width: 100%;
+}
+
+.butt-submit-profil {
+	width: auto;
+	padding: 5px 12px;
+	background-color: #485d96e3;
+	color: white;
+	cursor: pointer;
+	font-size: 20px;
+	border-bottom: none;
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	margin-top: 10px; 
+
+}
+
+.upload {
+	position: relative;
+}
+
+/* Courses */
+
+.i-courses {
+	width: 100%;
+	height: auto;
+	max-width:900px;
+	margin: auto;
+}
+
+
+.mySlides {display: none;}
+img {vertical-align: middle;}
+
+/* Commandes*/
+.C-img-commande {box-shadow: 0 0 38px #dbdbdb;}
+
+/*Flexbox*/
+
+#C-Commandes {
+	 display: flex;
+    flex-wrap: wrap;
+    width: 95%;
+    margin: auto;
+}
+.product-card {
+	padding: 7px;
+	flex:1 25%;
+	margin: 10px  auto;
+	transition:0.6s;
+	background-color: white;
+	position: relative;
+}
+
+.product-card:hover{
+	transform: scale(1.1);
+}
+.product-card:hover p{
+	transform: scale(1);
+}
+
+.product-image {
+  position: relative;
+}
+
+.product-image img {
+  transition: 1s;
+  max-width: 100%;
+}
+
+.imgFlex {
+  display: block; width: 100%;margin:auto;
+}
+
+.libelle-vet {font-size: 18px;	font-family: 'Yanone Kaffeesatz', sans-serif;}
+
+.prix-vet {font-size: 18px;	font-family: 'Yanone Kaffeesatz', sans-serif;}
+/* Produit */
+#C-Product {
+	display: grid;
+    width: 95%;
+    margin: auto;
+    grid-template-columns:auto 1fr;
+	grid-template-rows:1fr;
+}
+
+.C-Valider-Commande {
+	display: none;
+}
+
+.lien {
+	position: absolute;width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+}
+
+/* Commandes */
+#table-Commandes {
+	width: 100%;
+	max-width: 900px;	margin: 0px;
+}
+
+#table-Commandes tr,#table-Commandes tr td,#table-Commandes tr th{
+	width: 100%;
+	padding: 5px;
+}
+
+#table-Commandes tr td{
+	border-bottom:2px solid  #485d96e3;
+}
+
+
+
+
+/* Slideshow container */
+.slideshow-container {
+  position: relative;
+  margin: auto;
+}
+
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/*Formats*/
+
+/* Tablette */
+@media (max-width: 1200px) {
+	.product-card {	flex:1 30%;}
+
+}
+
+@media (max-width: 900px) {
+.C2-C3 {grid-column: 1/3}
+.C1 {grid-column: 1/3}
+.Wrapper-Connexion {grid-row:3 }
+.Wrapper-Footer {grid-row:4 }
+#map { width: 100%; }
+li a{font-size: 17px;}
+
+
+}
+/* Telephone */
+@media (max-width: 650px) {
+	.product-card {	flex:1 50%;}
+#C-Product {grid-template-columns:1fr;}
+.img-slide-Accueil {width: 100%;}
+.h1{font-size: 20px;}
+h1 {font-size: 17px;}
+p{font-size: 15px;}
+	table{
+		font-size: 14px;
+	}
+}
+
+@media (max-width: 450px) {
+.product-card {	flex:1 100%;}
+}
+
+
+/* Scrollbar*/
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background-color: white; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background:#5c6fa2; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background:#333; 
+}
+
+.butt-close {
+	background-color: transparent;
+	transition: 0.7s;
+	width: 26px;
+	height: 26px;
+}
+
+.butt-close:hover{
+	background-color: #485d96e3;
+}
+.butt-close:hover i{
+	color: white;
+}
