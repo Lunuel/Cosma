@@ -22,9 +22,6 @@
 			$Utel = $donnees['Utel'];
 
 			$photo = $donnees['Photo_profil'];
-			$rib = $donnees['Rib'];
-			$certificat = $donnees['CertificatMedical'];
-			$licence = $donnees['Licence'];
 
 			$DateNaissance = dateFR($donnees['DateNaissance']);
 
@@ -52,17 +49,10 @@
 			 
 			 <p class="h1 Yanone">Personne à contacter en cas d\'urgence</p>
 			 <hr class="sep2 bleu" style="max-width:320px;width:100%;">
-			 <p>'.$Unom.'</p>
-			 <p>'.$Uprenom.'</p>
-			 <p>'.$Utel.'</p>
-
-			 <p class="h1 Yanone\">Documents renseignés</p>
-			 <hr class="sep2 bleu" style="max-width:190px;width:100%;">
-			 <p><a target="_blank" class="bleu" href="../img/Adherent/RIB/'.$rib.'""><i class="fa fa-file-o" style="font-size:16px;margin-right:3px;"></i>Voir le RIB</a></p>
-
-			 <p><a target="_blank" class="bleu" href="../img/Adherent/Certificat_Medical/'.$certificat.'""><i class="fa fa-file-o" style="font-size:16px;margin-right:3px;"></i>Voir le Certificat médical</a></p>
-
-			 <p><a target="_blank" class="bleu" href="../img/Adherent/Licence/'.$licence.'""><i class="fa fa-file-o" style="font-size:16px;margin-right:3px;"></i>Voir la Licence</a></p></div>';
+			 <p>Nom: '.$Unom.'</p>
+			 <p>Prenom: '.$Uprenom.'</p>
+			 <p>Téléphone: '.$Utel.'</p>
+			</div>';
 	
 
 

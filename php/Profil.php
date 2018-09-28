@@ -65,43 +65,8 @@ else {
 					 ?>
 
 
-					<p class="h1 marg10">Informations supplémentaires<p>
-					<hr class="sep2 bleu" style="max-width: 250px;">
 
-					<p style="font-size: 17px;" class="bleu marg10">Vous avez le choix de transmettre soit une licence ou un certificat médical</p>
-
-
-
-
-					<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" enctype="multipart/form-data">
-					<div class="upload">
-					    <h1 class="browse">Sélectionnez votre certificat médical :</h1>
-					    <button class="butt-browse Yanone" id="butt-certificat">Choisir un fichier <i class="fa fa-upload white" style="font-size:18px;margin-left: 3px;"></i></button>
-					    <input type="file" name="certificat" value="" class="browse-input" id="browse-certificat">
-					</div>
-					    
-					    <p style="font-size: 15px;" class="bleu marg10">Ou</p>
-					<div class="upload">    
-					    <h1 class="browse">Sélectionnez votre licence :</h1>
-					    <button class="butt-browse Yanone" id="butt-licence">Choisir un fichier <i class="fa fa-upload white" style="font-size:18px;margin-left: 3px;"></i></button>
-					    <input type="file" name="licence" value="" class="browse-input" id="browse-licence">
-					</div>
-
-					 <div class="C-input-file" style="z-index: 0;">
-					    	<label class="label-file bleu">Sélectionnez un RIB</label><br>
-					    <button type="button" class="butt-browse Yanone" id="butt-rib">Choisir un fichier <i class="fa fa-upload white" style="font-size:18px;margin-left: 3px;"></i></button>
-					    <input type="file" name="rib" value="" class="browse-input" id="browse-rib"><br>
-						</div>
-
-					    <input type="hidden" name="MAX_FILE_SIZE" value="100000">
-					    
-
-					  
-	
-					  <input type="submit" name="valider_InfosSupp" class="butt-submit-profil" value="Envoyer">
-					</form>
-
-					</div>
+				</div>
 
 					<?php
 
