@@ -24,13 +24,16 @@ CREATE TABLE  adherent(
   Uprenom char(30) NOT NULL,
   Utel char(10) NOT NULL,
   Photo_profil char(100) DEFAULT "PPModele.png",
+  Rib char(100) DEFAULT "RIBModele.pdf",
+  CertificatMedical char(100) DEFAULT "CMModele.pdf",
+  Licence char(100) DEFAULT "LicenceModele.pdf",
   Clef char(100),
   Validation boolean DEFAULT false,
   CONSTRAINT pk_adherent PRIMARY KEY (Id_adherent),
   CONSTRAINT fk_adherentSexe FOREIGN KEY (Id_sexe) REFERENCES Sexe(Id_sexe)
   ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO adherent Values ("ADMINLUN", "LK6SGK5hHK9FI","LK6SGK5hHK9FI","Admin","Boss","admin@yahoo.fr","01/10/1999","59 ter rue Eugène Lefebvre","0666556293",2,"Kuster","Lunuel","0666556293",DEFAULT,"nhgyhfkjhliefhdjkljd",DEFAULT);
+INSERT INTO adherent Values ("ADMINLUN", "LK6SGK5hHK9FI","LK6SGK5hHK9FI","Admin","Boss","admin@yahoo.fr","01/10/1999","59 ter rue Eugène Lefebvre","0666556293",2,"Kuster","Lunuel","0666556293",DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,"nhgyhfkjhliefhdjkljd",DEFAULT);
 
 CREATE TABLE  admin(
   Id_admin char(8) NOT NULL,
