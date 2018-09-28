@@ -12,7 +12,7 @@ session_start()
 		<!-- Polices -->
 		<?php include_once "./link/polices.html"; ?>
 
-		<?php include_once "./link/icons.html"; ?>
+		<link rel="shortcut icon" href="./ico/ico.png">
 
 
 	    <!-- Icone sur navigateur -->
@@ -34,9 +34,9 @@ session_start()
 		<div class="wrapper">
 
 
-<?php include_once "./php/WP-Nav.php";  ?>
+		<?php include_once "./php/WP-Nav.php";  ?>
 
-<?php include_once "./php/WP-Connexion.php";  ?>
+		<?php include_once "./php/WP-Connexion.php";  ?>
 
 
 
