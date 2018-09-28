@@ -15,7 +15,7 @@
 					include "C-Connected.php";
 				}
 				else {
-					include "C-Connexion.php";
+					include "C-Connexion.php";;
 				}
 ?>	
 

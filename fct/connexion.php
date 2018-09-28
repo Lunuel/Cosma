@@ -9,9 +9,7 @@
 
 if(isset($_POST['valider_connexion'])){
 
-		    	$url = $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
-			    $host = 'https://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
-		      		if ($url == $_SERVER['HTTP_HOST']."/Cosma/index.php" | $url == $_SERVER['HTTP_HOST']."/Cosma/" | $host == "https://cosma-running.000webhostapp.com/index.php" | $host == "https://cosma-running.000webhostapp.com") {
+					if (verifIndex() == true){
 
 		    			include "./fct/listValC.php";
 		    			include "./php/connectBDD.php";
@@ -25,10 +23,7 @@ if(isset($_POST['valider_connexion'])){
 		      		}
 		    function connexionExistence()
 		    { 		      	
-
-		    	$url = $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
-			    $host = 'https://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
-		      		if ($url == $_SERVER['HTTP_HOST']."/Cosma/index.php" | $url == $_SERVER['HTTP_HOST']."/Cosma/" | $host == "https://cosma-running.000webhostapp.com/index.php" | $host == "https://cosma-running.000webhostapp.com") {
+					if (verifIndex() == true) {
 
 		    			include "./fct/listValC.php";
 		    			include "./php/connectBDD.php";
@@ -58,11 +53,7 @@ if(isset($_POST['valider_connexion'])){
 			}
 
 			function CompteValide(){
-				 $url = $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
-		    	    $host = 'https://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
-
-					
-		      		if ($url == $_SERVER['HTTP_HOST']."/Cosma/index.php" | $url == $_SERVER['HTTP_HOST']."/Cosma/" | $host == "https://cosma-running.000webhostapp.com/index.php" | $host == "https://cosma-running.000webhostapp.com") {
+					if (verifIndex() == true) {
 
 		    			include "./fct/listValC.php";
 		    			include "./php/connectBDD.php";

@@ -2,8 +2,7 @@
 					<div  class="WC-id">Profil</div>
 					<div class="t-center">
 						<?php
-						$url = 'https://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
-						     if ($url == "https://".$_SERVER['HTTP_HOST']."/Cosma/index.php" | $url == "https://cosma-running.000webhostapp.com/index.php") {
+						if (verifIndex() == true)  {
 			      			echo '<p class="t-Acceder bleu" ><a href="./php/Profil.php"><i class="fa fa-user-o" style="font-size:16px;margin-right:3px;"></i>Accéder à votre profil</a></p>
 			      				<p class="t-Acceder bleu" ><a href="./php/Commande.php">Je commande un équipement</a></p>
 
