@@ -5,7 +5,7 @@ function verifIndex(){
     $url = $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
     $host = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 
-   	if ($url == $_SERVER['HTTP_HOST']."/Cosma/index.php" | $url ==  $_SERVER['HTTP_HOST']."/Cosma/" | $host == "http://www.cosmarunning.fr/" | $host == "http://www.cosmarunning.fr/index.php") {
+   	if ($url == $_SERVER['HTTP_HOST']."/GIT/Cosma_1&1/Cosma/index.php" | $url ==  $_SERVER['HTTP_HOST']."/GIT/Cosma_1&1/Cosma/" | $host == "http://www.cosmarunning.fr/" | $host == "http://www.cosmarunning.fr/index.php") {
    		return true;
    	}	
    	else {

@@ -1,6 +1,7 @@
 <?php 
 session_start();
 ?>
+<?php $error = './Error404.php'; ?>
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -46,15 +47,15 @@ session_start();
 					<p class="h1">Plans d'entrainements</p>
 					<hr class="sep2 " style="max-width: 190px;">
 					<p class="h1">10 km</p>
-					<p><a target="_blank" class="gris" href="../ressources/Charte.pdf"><i class="gris fa fa-file-excel-o" style="font-size:18px;margin-right: 5px;"></i>Plan d'entrainement 10km.xlsx</a></p>
+					<p><a target="_blank" class="gris" href="<?php echo $error; ?>"><i class="gris fa fa-file-excel-o" style="font-size:18px;margin-right: 5px;"></i>Plan d'entrainement 10km.xlsx</a></p>
 					<p class="h1">Semi 5 jours</p>
-					<p><a target="_blank" class="gris" href="../ressources/Charte.pdf"><i class="gris fa fa-file-excel-o" style="font-size:18px;margin-right: 5px;"></i>Plan d'entrainement Semi 5 jours.xlsx</a></p>
+					<p><a target="_blank" class="gris" href="<?php echo $error; ?>"><i class="gris fa fa-file-excel-o" style="font-size:18px;margin-right: 5px;"></i>Plan d'entrainement Semi 5 jours.xlsx</a></p>
 					<p class="h1">Semi 4 jours</p>
-					<p><a target="_blank" class="gris" href="../ressources/Charte.pdf"><i class="gris fa fa-file-excel-o" style="font-size:18px;margin-right: 5px;"></i>Plan d'entrainement Semi 4 jours.xlsx</a></p>
+					<p><a target="_blank" class="gris" href="<?php echo $error; ?>"><i class="gris fa fa-file-excel-o" style="font-size:18px;margin-right: 5px;"></i>Plan d'entrainement Semi 4 jours.xlsx</a></p>
 					<p class="h1">Marathon 5 jours</p>
-					<p><a target="_blank" class="gris" href="../ressources/Charte.pdf"><i class="gris fa fa-file-excel-o" style="font-size:18px;margin-right: 5px;"></i>Plan d'entrainement Semi 5 jours.xlsx</a></p>
+					<p><a target="_blank" class="gris" href="<?php echo $error; ?>"><i class="gris fa fa-file-excel-o" style="font-size:18px;margin-right: 5px;"></i>Plan d'entrainement Semi 5 jours.xlsx</a></p>
 					<p class="h1">Marathon 4 jours</p>
-					<p><a target="_blank" class="gris" href="../ressources/Charte.pdf"><i class="gris fa fa-file-excel-o" style="font-size:18px;margin-right: 5px;"></i>Plan d'entrainement Semi 4 jours.xlsx</a></p>
+					<p><a target="_blank" class="gris" href="<?php echo $error; ?>"><i class="gris fa fa-file-excel-o" style="font-size:18px;margin-right: 5px;"></i>Plan d'entrainement Semi 4 jours.xlsx</a></p>
 				</div>
 
 
