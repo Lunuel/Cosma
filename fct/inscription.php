@@ -80,7 +80,7 @@ if(isset($_POST['valider_inscription'])){
 				$code = exist_id("adherent");
 				$key = GenerateurCodeMIN(30);
 
-				$request = $bdd->prepare('INSERT INTO adherent VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,DEFAULT,DEFAULT,DEFAULT,DEFAULT,?,DEFAULT)');
+				$request = $bdd->prepare('INSERT INTO adherent VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,DEFAULT,?,DEFAULT)');
 				$request->execute(array($code,$mdphache,$mdpChache,$nom,$prenom,$email,$bday,$adresse,$tel,$Sexe,$Unom,$Uprenom,$Utel,$key));
 
 				$validIns = "Un email de confirmation a été envoyé à l'adresse  ".$email;
