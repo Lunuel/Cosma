@@ -2,16 +2,11 @@
 include"connectBDD.php";
 include"exist_ID.php";	
 
-$RIBtype = $RIBtaille = $Ptype = $Ptaille = $Ffilephoto = $Ffilerib = $Fmdp = $FEmail = $ChampsVides = $InscriptionReussie = $AucunFichier ="";
-	//Return True
-	if(isset($_SESSION['InscriptionReussie'])){$InscriptionReussie = $_SESSION['InscriptionReussie'].'<br>';}
+	$Message= '';
+	
+	if(isset($_SESSION['Message'])){$Message = $_SESSION['Message'].'<br>';}
 
-	//Return false
-	if(isset($_SESSION['Fmdp'])){$Fmdp = $_SESSION['Fmdp'].'<br>';}
-	if(isset($_SESSION['FEmail'])) {$FEmail = $_SESSION['FEmail'].'<br>';}
-	if(isset($_SESSION['ChampsVides'])){$ChampsVides = $_SESSION['ChampsVides'].'<br>';}
-
-unset($_SESSION['Fmdp'],$_SESSION['FEmail'],$_SESSION['ChampsVides'],$_SESSION['InscriptionReussie'],$_SESSION['AucunFichier'] );	
+	unset($_SESSION['Message']);	
 
 if(isset($_POST['valider_inscription'])){
 
@@ -75,7 +70,7 @@ if(isset($_POST['valider_inscription'])){
 			include"equivalence.php";
 
 
-			if ( countElement($email,"Email","adherent") == true AND verif_champvide() == true AND equivalence($mdphache,$mdpChache) == true)  {		
+			if ( countElement($email,"Email","adherent") == true AND verif_champvide() == true AND equivalence($mdphache,$mdpChache) == true )  {		
 
 				$code = exist_id("adherent");
 				$key = GenerateurCodeMIN(30);
@@ -91,7 +86,7 @@ if(isset($_POST['valider_inscription'])){
 				//=====Déclaration des messages au format texte et au format HTML. 
 				$message_txt = "Salut à tous, voici un e-mail envoyé par un script PHP.";
 
-				$message = '<html><head></head><body><div>
+				$message_html = '<html><head></head><body><div>
 				<img src="" style="width:100%;height:auto">
 				<div>
 				<p style="text-align:center">Ceci est un mail automatique, Merci de ne pas y repondre.</p>
@@ -115,30 +110,34 @@ if(isset($_POST['valider_inscription'])){
 				$header.= "MIME-Version: 1.`\n";
 				$header.= "Content-type: text/html; charset= iso-8859-1\n";
 
-				mail($destinataire,$sujet, $message, $header);
+				mail($destinataire,$sujet, $message_html, $header);
 				
-				$_SESSION['InscriptionReussie'] = "Vous êtes désormais adhérent(e) <br> Un email de confirmation a été envoyé. 
+				$Message.= "Vous êtes désormais adhérent(e) <br> Un email de confirmation a été envoyé. 
 				";
 				header('Location: '.$_SERVER['PHP_SELF'].'');
 
 
 		    } else {
 
+				if (verif_champvide()== false) {	
+		    		$Message.= 'Il manque des informations<br>';}
 
-		    	if (countElement($email,"Email","adherent") == false) {
-		    		$_SESSION['FEmail'] = 'Email déjà utilisé';}
-		    	else if (verif_champvide()== false) {	
-		    		$_SESSION['ChampsVides'] = 'Il manque des informations';}
+		    	else if (countElement($email,"Email","adherent") == false) {
+		    		$Message.= 'Email déjà utilisé<br>';}
+		    	
 		    	else if (equivalence($mdphache,$mdpChache) == false) {	
-		    		$_SESSION['Fmdp'] ='Mots de passe différents';}
+		    		$Message.='Mots de passe différents<br>';}
 
 		    	else {	
 		    		header('Location: ../index.php');	
-	
 		    	}
+
 		    	header('Location: '.$_SERVER['PHP_SELF'].'');				
 
 		    }
+
+		    $_SESSION['Message'] = $Message;
+
 
 }
 ?>

@@ -39,7 +39,7 @@ include_once"../fct/inscription.php";
 
 	</head>
 
-	<body>
+	<body onload ="CheckForm()">
 		<div class="wrapper">
 
 			<?php include "./WP-Nav.php" ?>
@@ -84,6 +84,9 @@ include_once"../fct/inscription.php";
 									<th><input placeholder="Mot de passe" id="mdpI" type="password" class="" name="mdp"></th>
 								</tr>
 								<tr>
+									<th class="th_errorMDP"=""><p id="errorMDP"></p></th>
+								</tr>
+								<tr>
 									<th ><input placeholder="Confirmation mot de passe" type="password" class="" name="mdpC"></th>
 								</tr>
 								<tr>
@@ -119,17 +122,12 @@ include_once"../fct/inscription.php";
 									<th ><input placeholder="Téléphone" type="text" name="Utel"></th>
 								</tr>
 								<tr>
-									<th><input type="submit" class="submit" id="submit-Register" style="color: white" value="Devenir adhérent" name="valider_inscription"></th>
+									<th><input type="submit" class="submit" id="submit-Register" style="color: white" value="Devenir adhérent" disabled name="valider_inscription"></th>
 								</tr>
 								
 								<tr>
 									<th class="bleu Yanone t-center" style="padding:8px 0px;">
-										<?php 
-										echo $InscriptionReussie;
-										echo $FEmail;
-										echo $ChampsVides;
-										echo $Fmdp; ?>		
-									</th>
+										<?php echo $Message;?>
 								</tr>
 							</table>
 						</form>
@@ -147,10 +145,40 @@ include_once"../fct/inscription.php";
     <script> new WOW().init();</script>
 
 
-	<script>
+		<script>
 			 $('#butt-rib').click(function(){
 		    	$('#browse-rib').click();
 			});
+		</script>
+
+		<script>
+			function CheckForm()
+			{
+			  var pwd = document.getElementById("mdpI").value;
+			  var listRe = [{
+			    re: /[a-zA-Z]/g,
+			    count: 6,
+			    msg: "Votre mot de passe doit avoir au moins 6 lettres"
+			  }, {
+			    re: /\d/g,
+			    count: 2,
+			    msg: "Votre mot de passe doit avoir au moins 2 chiffres"
+			  }];
+			 
+			  for (var i = 0; i < listRe.length; i++) {
+			    var item = listRe[i];
+			    var match = pwd.match(item.re);
+			    if (null === match || match.length < item.count) {
+			      document.getElementById("errorMDP").innerHTML = item.msg;
+			      document.getElementById("submit-Register").disabled = true;
+			      return false;
+			    }
+			    else {
+			    	document.getElementById("submit-Register").disabled = false;
+			    	document.getElementById("errorMDP").innerHTML = "Le mot de passe est correct";}
+			  }
+			}
+			setInterval(CheckForm, 1000);
 		</script>
 
 

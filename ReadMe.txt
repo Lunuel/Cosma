@@ -16,10 +16,16 @@ Il suffit de changer les valeurs pour celle de la BDD de l'hébergeur
 	-Question d'interet, il vaudrait mieux créer cette possiblité 
          au niveau de l'administration
 
-* Dans le profil, on on ne peut plus ajouter  CertificatMedical,Licence,RIB
+*Dans le profil, on on ne peut plus ajouter  CertificatMedical,Licence,RIB
 	-On ne plus les voir
 
 *Manque les plans d'entrainements (page= PlansEntrainements.php)
 	-Redirection des liens vers page en construction
+
+*Ajout d'une icone dans la barre d'onglet
+
+*Débug Inscription
+
+*Envoie d'un mail de confirmation
 
 	
