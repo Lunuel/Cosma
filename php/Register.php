@@ -171,11 +171,13 @@ include_once"../fct/inscription.php";
 			    if (null === match || match.length < item.count) {
 			      document.getElementById("errorMDP").innerHTML = item.msg;
 			      document.getElementById("submit-Register").disabled = true;
+			      document.getElementById("errorMDP").style.color ='#a9082db3';
 			      return false;
 			    }
 			    else {
 			    	document.getElementById("submit-Register").disabled = false;
 			    	document.getElementById("errorMDP").innerHTML = "Le mot de passe est correct";}
+			    	document.getElementById("errorMDP").style.color ='#4caf50';
 			  }
 			}
 			setInterval(CheckForm, 1000);

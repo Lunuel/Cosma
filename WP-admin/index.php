@@ -1,3 +1,3 @@
 <?php 
-header('Location : WP-login.php')
+header('Location : WP-login.php');
 ?>
