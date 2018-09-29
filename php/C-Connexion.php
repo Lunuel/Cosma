@@ -14,9 +14,8 @@
 									<th ><input type="submit" class="submit" value="Se connecter" id="submit-Connexion" name="valider_connexion"></th>
 								</tr>
 								<tr>
-									<th><?php 
-				if(isset($ErreurConnexion)){echo $ErreurConnexion;};if(isset($CompteNonValide)){echo $CompteNonValide;} 
-									?> </th>
+									<th><p class="Yanone bleu"><?php echo $Message;
+									?> </p></th>
 								</tr>
 								
 							</table>

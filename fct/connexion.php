@@ -1,11 +1,10 @@
 <?php
-	//Return false
-	if(isset($_SESSION['ErreurConnexion'])){$ErreurConnexion = $_SESSION['ErreurConnexion'];}
 
-	if(isset($_SESSION['CompteNonValide'])){$CompteNonValide= $_SESSION['CompteNonValide'];}
+	$Message= '';
+	
+	if(isset($_SESSION['Message'])){$Message = $_SESSION['Message'].'<br>';}
 
-
-	unset($_SESSION['ErreurConnexion'],$_SESSION['CompteNonValide']);	
+	unset($_SESSION['Message']);	
 
 if(isset($_POST['valider_connexion'])){
 
@@ -76,7 +75,7 @@ if(isset($_POST['valider_connexion'])){
 
 						while ($donnees = $compte->fetch()){
 						$validation =  $donnees['Validation'];}
-						if ($validation == 0) { $_SESSION['CompteNonValide'] = '<p class="Yanone bleu">Email en attente de confirmation</p>';
+						if ($validation == 0) {
 						return false; 
 						}
 						else{ 
@@ -98,18 +97,19 @@ if(isset($_POST['valider_connexion'])){
 
 				$_SESSION['id_adherent'] = $membre;
 
-				header('Location: '.$_SERVER['PHP_SELF'].'');
-
 				}
+				else {
+					$Message = 'Email en attente de confirmation';
+					header('Location: '.$_SERVER['PHP_SELF'].'');	
+				}
+				header('Location: '.$_SERVER['PHP_SELF'].'');	
 
 		    } else {
-		    	if (connexionExistence() == false) {
-		    		$_SESSION['ErreurConnexion'] = '<p class="Yanone bleu">Erreur de connexion</p>';
-		    		header('Location: '.$_SERVER['PHP_SELF'].'');
-		    	}
-
-		    	
+		    	$Message = 'Erreur de connexion';
+		    	header('Location: '.$_SERVER['PHP_SELF'].'');	
 		    		
 		    }
+
+		    $_SESSION['Message'] = $Message;
 }
 ?>
